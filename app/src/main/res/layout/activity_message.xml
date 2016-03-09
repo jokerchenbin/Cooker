@@ -1,0 +1,131 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.mastercooker.MessageActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/activity_message_tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg">
+
+        <ImageView
+            android:id="@+id/activity_message_tb_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:adjustViewBounds="true"
+            android:onClick="onClickBack"
+            android:scaleType="fitStart"
+            android:src="@mipmap/ic_back" />
+
+        <TextView
+            android:id="@+id/activity_message_tb_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/bg"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/activity_message_tb_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:adjustViewBounds="true"
+            android:scaleType="fitEnd"
+            android:onClick="onClickCollect"
+            android:src="@mipmap/ic_collection_gray" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="vertical"
+
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:id="@+id/activity_message_tv_null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="NULL"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/activity_message_iv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:adjustViewBounds="true"
+                android:maxHeight="120dp"
+                android:scaleType="fitStart" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/describe"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/activity_message_tv_describe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/food"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/activity_message_tv_food"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/keywords"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/activity_message_tv_keywords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_marginBottom="8dp"
+                android:text="@string/message"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/activity_message_tv_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
