@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//测试提交
         /*
         mToolbar = (Toolbar)findViewById(R.id.activity_main_tb);
         mToolbar.addView(view);
