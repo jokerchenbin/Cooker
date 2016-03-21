@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//测试提交
+        //测试提交
         /*
         mToolbar = (Toolbar)findViewById(R.id.activity_main_tb);
         mToolbar.addView(view);
@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
                 int id = cursor.getInt(0);
                 String img = cursor.getString(3);
                 String name = cursor.getString(cursor.getColumnIndex(CookStore.IMAGES));
-                String url = "http://tnfs.tngou.net/image" + img ;
+                String url = "http://tnfs.tngou.net/image" + img;
                 Log.i(TAG, id + "--------" + img + "----" + name + "----" + url);
                 Bitmap bitmap = ImageLoader.getInstance().loadImageSync(url, options);
                 if (null == bitmap)
