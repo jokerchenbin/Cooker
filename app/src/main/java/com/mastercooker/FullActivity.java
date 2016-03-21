@@ -10,7 +10,7 @@ public class FullActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);//change
         setContentView(R.layout.activity_full);
 
         new Thread() {
