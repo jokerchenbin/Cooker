@@ -15,6 +15,7 @@ import com.mastercooker.R;
 import com.mastercooker.model.Cook;
 import com.mastercooker.model.Util;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class CookAdapter extends RecyclerView.Adapter<CookAdapter.ItemViewHolder> {
@@ -41,7 +42,7 @@ public class CookAdapter extends RecyclerView.Adapter<CookAdapter.ItemViewHolder
         notifyDataSetChanged();
     }
 
-    public void clear(){
+    public void clear() {
         this.cooks.clear();
         notifyDataSetChanged();
     }
@@ -54,8 +55,9 @@ public class CookAdapter extends RecyclerView.Adapter<CookAdapter.ItemViewHolder
     @Override
     public void onBindViewHolder(CookAdapter.ItemViewHolder holder, int position) {
         final Cook cook = cooks.get(position);
-        final int id = mContext.getResources().getIdentifier(Util.getZero(cook.getId()),"drawable","com.mastercooker");
+        final int id = mContext.getResources().getIdentifier(Util.getZero(cook.getId()), "drawable", "com.mastercooker");
         Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), id);
+
         holder.mImageView.setImageBitmap(bitmap);
         holder.mTextView.setText(cook.getName());
 

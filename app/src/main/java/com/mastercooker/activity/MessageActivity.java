@@ -1,4 +1,4 @@
-package com.mastercooker;
+package com.mastercooker.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mastercooker.R;
 import com.mastercooker.database.DBCookOperation;
 import com.mastercooker.model.Cook;
 import com.mastercooker.model.Util;
@@ -43,7 +44,7 @@ public class MessageActivity extends AppCompatActivity {
         mImageViewCollect = (ImageView) findViewById(R.id.activity_message_tb_iv);
 
         Intent intent = getIntent();
-        mCookLog = intent.getParcelableExtra("Cook");
+        mCookLog = (Cook) intent.getSerializableExtra("Cook");
         mTextViewTitle.setText(mCookLog.getName());
         String bitmapName = "com.mastercooker:drawable/" + Util.getZero(mCookLog.getId());
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),

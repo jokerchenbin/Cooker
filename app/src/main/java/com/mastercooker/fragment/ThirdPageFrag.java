@@ -14,7 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.mastercooker.MessageActivity;
+import com.mastercooker.activity.MessageActivity;
 import com.mastercooker.R;
 import com.mastercooker.adapter.CookAdapter;
 import com.mastercooker.database.DBCookOperation;

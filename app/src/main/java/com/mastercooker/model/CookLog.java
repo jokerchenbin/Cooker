@@ -1,5 +1,7 @@
 package com.mastercooker.model;
 
+import android.os.Parcel;
+
 public class CookLog extends Cook{
 
     private String  is_love = "false";
@@ -8,6 +10,7 @@ public class CookLog extends Cook{
     private String  one;
     private String two;
     private String three;
+
 
     public String getIs_love() {
         return is_love;

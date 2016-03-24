@@ -3,7 +3,10 @@ package com.mastercooker.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Cook implements   Parcelable{
+import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.datatype.BmobFile;
+
+public class Cook extends BmobObject{
     protected int id;//编号,主键
     protected String name;//名称
     protected String food;//食物
@@ -15,56 +18,12 @@ public class Cook implements   Parcelable{
     protected int count;//访问次数
     protected int f_count;//收藏数
     protected int r_count;//评论读数
+    private BmobFile file;
 
-    //实例化静态内部对象CREATOR实现接口Parcelable.Creator
-    public static final Parcelable.Creator<Cook> CREATOR = new Creator<Cook>() {
 
-        @Override
-        public Cook[] newArray(int size) {
-            return new Cook[size];
-        }
 
-        //将Parcel对象反序列化为ParcelableDate
-        @Override
-        public Cook createFromParcel(Parcel source) {
-            return new Cook(source);
-        }
-    };
 
-    public Cook(Parcel parcel){
-        id=parcel.readInt();
-        count=parcel.readInt();
-        f_count=parcel.readInt();
-        r_count=parcel.readInt();
-        name=parcel.readString();
-        food=parcel.readString();
-        img=parcel.readString();
-        images=parcel.readString();
-        description=parcel.readString();
-        keywords=parcel.readString();
-        message=parcel.readString();
-    }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public Cook(){}
-    @Override
-    public void writeToParcel(Parcel parcel, int flags) {
-        parcel.writeInt(id);
-        parcel.writeInt(count);
-        parcel.writeInt(f_count);
-        parcel.writeInt(r_count);
-        parcel.writeString(name);
-        parcel.writeString(food);
-        parcel.writeString(img);
-        parcel.writeString(images);
-        parcel.writeString(description);
-        parcel.writeString(keywords);
-        parcel.writeString(message);
-    }
 
     @Override
     public String toString() {
