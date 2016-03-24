@@ -4,4 +4,29 @@
     <color name="inChoose">#FFFFFF</color>
     <color name="search_tv_stroke">#ffc81a</color>
 
+
+    <!-- words A color -->
+    <color name="a">#fe601a</color>
+    <!-- words B color -->
+    <color name="b">#09091a</color>
+    <color name="bb">#a009091a</color>
+    <!-- words C color -->
+    <color name="c">#6b6b76</color>
+    <!-- words D color -->
+    <color name="d">#a2a2a2</color>
+    <!-- words E color -->
+    <color name="e">#e7e7e7</color>
+    <!-- words F color -->
+    <color name="f">#bfbfbf</color>
+
+    <!-- 背景底色-->
+    <color name="bg_bg">#f5f5f5</color>
+
+    <!-- word G color -->
+
+    <color name="top_bar_bg">#FF027FFD</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="main_color">#FF027FFD</color>
+
 </resources>
