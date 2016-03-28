@@ -1,18 +1,12 @@
 package com.mastercooker.fragment;
 
 
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
@@ -21,12 +15,8 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.mastercooker.R;
-import com.mastercooker.adapter.FoodStyleListFragmentAdapter;
-import com.mastercooker.adapter.JobInfoAdapter;
-import com.mastercooker.model.FoodStyle;
-import com.mastercooker.model.Util;
+import com.mastercooker.adapter.CookInfoAdapter;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -128,6 +118,6 @@ public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderCl
         View v = View.inflate(getContext(), R.layout.head, null);
         mSlider = (SliderLayout) v.findViewById(R.id.slider);
         list.addHeaderView(v);
-        list.setAdapter(new JobInfoAdapter(getContext()));
+        list.setAdapter(new CookInfoAdapter(getContext()));
     }
 }
