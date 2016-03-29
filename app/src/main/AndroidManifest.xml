@@ -22,14 +22,6 @@
             android:label="@string/title_activity_message" >
         </activity>
 
-        <!--
-        <provider
-            android:name=".database.CookerContentProvider"
-            android:authorities="com.mastercooker.mastercooker"
-            android:enabled="true"
-            android:exported="true" >
-        </provider>
-        -->
 
         <activity
             android:name=".activity.FoodListActivity"

@@ -1,12 +1,14 @@
 package com.mastercooker.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -16,6 +18,7 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.mastercooker.R;
+import com.mastercooker.activity.MessageActivity;
 import com.mastercooker.adapter.CookInfoAdapter;
 import com.mastercooker.model.Cook;
 import com.mastercooker.tools.FunctionUtils;
@@ -33,6 +36,7 @@ public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderCl
     private SliderLayout mSlider;
     private ListView mList;
     private View view;
+    private List<Cook> cookList;
 
 
     public FirstPageFrag() {
@@ -66,6 +70,7 @@ public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderCl
         query.findObjects(getContext(), new FindListener<Cook>() {
             @Override
             public void onSuccess(List<Cook> list) {
+                cookList = list;
                 mList.setAdapter(new CookInfoAdapter(getContext(),list));
                 FunctionUtils.dissmisLoadingDialog();
             }
@@ -149,6 +154,13 @@ public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderCl
         View v = View.inflate(getContext(), R.layout.head, null);
         mSlider = (SliderLayout) v.findViewById(R.id.slider);
         mList.addHeaderView(v);
-
+        mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getContext(), MessageActivity.class);
+                intent.putExtra("Cook",cookList.get(position-1));
+                startActivity(intent);
+            }
+        });
     }
 }

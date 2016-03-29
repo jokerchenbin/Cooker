@@ -1,5 +1,7 @@
 package com.mastercooker.activity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,25 +18,35 @@ import com.mastercooker.R;
 import com.mastercooker.database.DBCookOperation;
 import com.mastercooker.model.Cook;
 import com.mastercooker.model.Util;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class MessageActivity extends AppCompatActivity {
 
     private TextView mTextViewNull, mTextViewDescribe, mTextViewFood, mTextViewKeyWords,
             mTextViewMessage, mTextViewTitle;
     private ImageView mImageView, mImageViewCollect;
-
-
     private boolean is_collect = false;
     private boolean is_collected = false;
-
-
     private Cook mCookLog;
+    private Context context;
+    private Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
+        context = this;
+        activity = this;
+        initView();
+        initData();
 
+    }
+
+    /**
+     * Created by 陈彬 on 2016/3/29  17:18
+     * 方法描述: 初始化视图
+     */
+    private void initView() {
         mImageView = (ImageView) findViewById(R.id.activity_message_iv);
         mTextViewDescribe = (TextView) findViewById(R.id.activity_message_tv_describe);
         mTextViewFood = (TextView) findViewById(R.id.activity_message_tv_food);
@@ -42,32 +54,23 @@ public class MessageActivity extends AppCompatActivity {
         mTextViewMessage = (TextView) findViewById(R.id.activity_message_tv_message);
         mTextViewTitle = (TextView) findViewById(R.id.activity_message_tb_tv_title);
         mImageViewCollect = (ImageView) findViewById(R.id.activity_message_tb_iv);
+    }
 
+    /**
+     * Created by 陈彬 on 2016/3/29  17:18
+     * 方法描述: 初始化数据
+     */
+    private void initData() {
         Intent intent = getIntent();
         mCookLog = (Cook) intent.getSerializableExtra("Cook");
         mTextViewTitle.setText(mCookLog.getName());
-        String bitmapName = "com.mastercooker:drawable/" + Util.getZero(mCookLog.getId());
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
-                getResources().getIdentifier(bitmapName,
-                        "drawable",
-                        "com.mastercooker"));
-        mImageView.setImageBitmap(bitmap);
-
-        //判断是否已经加入收藏
-        DBCookOperation dbCookOperation = new DBCookOperation(this);
-        if (dbCookOperation.queryOne(mCookLog.getId()).size() > 0) {
-            is_collected = true;
-            is_collect = true;
-            mImageViewCollect.setImageResource(R.mipmap.ic_collection);
-        }
-
+        ImageLoader.getInstance().displayImage(mCookLog.getFile().getFileUrl(this), mImageView);
         mTextViewDescribe.setText(mCookLog.getDescription());
         mTextViewFood.setText(mCookLog.getFood());
         mTextViewKeyWords.setText(mCookLog.getKeywords());
         //需要将html文本转换
         mTextViewMessage.setText(Html.fromHtml(mCookLog.getMessage()));
         mTextViewMessage.setMovementMethod(ScrollingMovementMethod.getInstance());//滚动
-
     }
 
     public void onClickCollect(View view) {
@@ -85,18 +88,4 @@ public class MessageActivity extends AppCompatActivity {
         this.finish();
     }
 
-    @Override
-    protected void onStop() {
-        DBCookOperation dbCookOperation;
-        if (!is_collected && is_collect) {
-            dbCookOperation = new DBCookOperation(this);
-            dbCookOperation.AddCook(mCookLog);
-        } else if (is_collected && !is_collect) {
-            dbCookOperation = new DBCookOperation(this);
-            dbCookOperation.delete(mCookLog);
-        }
-        Intent intent = new Intent("com.mastercooker_ACTION");
-        sendBroadcast(intent);
-        super.onStop();
-    }
 }

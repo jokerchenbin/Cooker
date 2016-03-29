@@ -67,7 +67,6 @@ public class CookInfoAdapter extends BaseAdapter {
         }
         //绑定数据
         holder.tv_name.setText(cook.getName());
-        Logger.getInstance().v("chenbin",cook.getFile().getFileUrl(context));
         ImageLoader.getInstance().displayImage(cook.getFile().getFileUrl(context),holder.iv_photo);
         return convertView;
     }

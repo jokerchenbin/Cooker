@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         radioButton3.setOnClickListener(this);
         radioButton4.setOnClickListener(this);
         viewPager = (ViewPager) findViewById(R.id.activity_main_framelayout);
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         firstPageFrag = new FirstPageFrag();
         secondPageFragment = new SecondPageFragment();
@@ -96,22 +95,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.radiobutton1://首页
                 viewPager.setCurrentItem(0);
                 textView.setText(R.string.FirstPage);
-                //changeTopBarState("蜂鸟兼职");
                 break;
             case R.id.radiobutton2: // 兼职工作
                 viewPager.setCurrentItem(1);
                 textView.setText(R.string.search);
-                //changeTopBarState("兼职");
                 break;
             case R.id.radiobutton3: // 我的
                 viewPager.setCurrentItem(2);
                 textView.setText(R.string.collection);
-                //changeTopBarState("我的");
                 break;
             case R.id.radiobutton4: // 我的
                 viewPager.setCurrentItem(3);
                 textView.setText(R.string.about);
-                //changeTopBarState("我的");
                 break;
         }
     }
