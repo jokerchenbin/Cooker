@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 
 import com.mastercooker.R;
+import com.mastercooker.model.Cook;
+import com.mastercooker.tools.Logger;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
@@ -20,16 +23,16 @@ import java.util.List;
  */
 public class CookInfoAdapter extends BaseAdapter {
     private Context context;
-    //private List<JobInfo> list;
+    private List<Cook> list;
 
-    public CookInfoAdapter(Context context) {
+    public CookInfoAdapter(Context context,List<Cook> list) {
         this.context = context;
-        //this.list = list;
+        this.list = list;
     }
 
     @Override
     public int getCount() {
-        return 6;
+        return list.size();
     }
 
     @Override
@@ -45,6 +48,7 @@ public class CookInfoAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
+        Cook cook = list.get(position);
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.job_info_item, parent,false);
             holder = new ViewHolder();
@@ -61,7 +65,10 @@ public class CookInfoAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-
+        //绑定数据
+        holder.tv_name.setText(cook.getName());
+        Logger.getInstance().v("chenbin",cook.getFile().getFileUrl(context));
+        ImageLoader.getInstance().displayImage(cook.getFile().getFileUrl(context),holder.iv_photo);
         return convertView;
     }
 

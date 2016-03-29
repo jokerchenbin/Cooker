@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
@@ -16,14 +17,21 @@ import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.mastercooker.R;
 import com.mastercooker.adapter.CookInfoAdapter;
+import com.mastercooker.model.Cook;
+import com.mastercooker.tools.FunctionUtils;
+import com.mastercooker.tools.ToastDiy;
 
 import java.util.HashMap;
+import java.util.List;
+
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.listener.FindListener;
 
 
 public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
 
     private SliderLayout mSlider;
-    private ListView list;
+    private ListView mList;
     private View view;
 
 
@@ -41,10 +49,33 @@ public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderCl
         if (view == null) {
             view = inflater.inflate(R.layout.first_page_frag, container, false);
             initView(view);
-            //getData(getContext());
         }
         showViewPager();
+        getData();
         return view;
+    }
+
+    /**
+     * Created by 陈彬 on 2016/3/29  14:15
+     * 方法描述: 获取数据
+     */
+    private void getData() {
+        FunctionUtils.showLoadingDialog(getActivity());
+        BmobQuery<Cook> query = new BmobQuery<>();
+        query.setLimit(20);
+        query.findObjects(getContext(), new FindListener<Cook>() {
+            @Override
+            public void onSuccess(List<Cook> list) {
+                mList.setAdapter(new CookInfoAdapter(getContext(),list));
+                FunctionUtils.dissmisLoadingDialog();
+            }
+
+            @Override
+            public void onError(int i, String s) {
+                ToastDiy.showShort(getContext(),s);
+                FunctionUtils.dissmisLoadingDialog();
+            }
+        });
     }
 
     @Override
@@ -114,10 +145,10 @@ public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderCl
     }
 
     private void initView(View view) {
-        list = (ListView) view.findViewById(R.id.firstpage_list);
+        mList = (ListView) view.findViewById(R.id.firstpage_list);
         View v = View.inflate(getContext(), R.layout.head, null);
         mSlider = (SliderLayout) v.findViewById(R.id.slider);
-        list.addHeaderView(v);
-        list.setAdapter(new CookInfoAdapter(getContext()));
+        mList.addHeaderView(v);
+
     }
 }

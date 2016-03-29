@@ -129,4 +129,12 @@ public class Cook extends BmobObject{
     public void setR_count(int r_count) {
         this.r_count = r_count;
     }
+
+    public BmobFile getFile() {
+        return file;
+    }
+
+    public void setFile(BmobFile file) {
+        this.file = file;
+    }
 }
