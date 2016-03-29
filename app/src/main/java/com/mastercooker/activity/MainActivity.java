@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FourthPageFrag fourthPageFrag;
     private RadioButton radioButton1,radioButton2,radioButton3,radioButton4;
     private ViewPager viewPager;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 方法描述: 初始化组件
      */
     private void initView() {
+        textView=(TextView)findViewById(R.id.activity_main_tb_tv_title);
         radioButton1 = (RadioButton) findViewById(R.id.radiobutton1);
         radioButton2 = (RadioButton) findViewById(R.id.radiobutton2);
         radioButton3 = (RadioButton) findViewById(R.id.radiobutton3);
@@ -93,18 +95,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.radiobutton1://首页
                 viewPager.setCurrentItem(0);
+                textView.setText(R.string.FirstPage);
                 //changeTopBarState("蜂鸟兼职");
                 break;
             case R.id.radiobutton2: // 兼职工作
                 viewPager.setCurrentItem(1);
+                textView.setText(R.string.search);
                 //changeTopBarState("兼职");
                 break;
             case R.id.radiobutton3: // 我的
                 viewPager.setCurrentItem(2);
+                textView.setText(R.string.collection);
                 //changeTopBarState("我的");
                 break;
             case R.id.radiobutton4: // 我的
                 viewPager.setCurrentItem(3);
+                textView.setText(R.string.about);
                 //changeTopBarState("我的");
                 break;
         }
