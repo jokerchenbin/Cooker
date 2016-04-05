@@ -28,5 +28,6 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="main_color">#FF027FFD</color>
+    <color name="login_btn_bg">#F65959</color>
 
 </resources>

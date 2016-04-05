@@ -42,6 +42,8 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">#dddddd</item>
     </style>
+    <style name="ToolBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="ToolBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>

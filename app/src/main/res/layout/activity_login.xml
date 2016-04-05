@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_bg"
+    android:orientation="vertical"
+    tools:context=".activity.LoginActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/activity_login_logo"
+                android:layout_gravity="center"
+                android:background="@mipmap/login_bg_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/login_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:text="____________________天天食谱____________________"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/login_username"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_bg"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:hint="@string/user_name"
+                android:paddingLeft="15dp"
+                android:textCursorDrawable="@drawable/cursor_bg" />
+            <EditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/login_password"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_bg"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:hint="@string/user_password"
+                android:paddingLeft="15dp"
+                android:textCursorDrawable="@drawable/cursor_bg" />
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:background="@color/login_btn_bg"
+                android:text="登 录"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/register_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:background="@color/login_btn_bg"
+                android:text="注 册"
+                android:textColor="@color/white" />
+            <TextView
+                android:id="@+id/forget_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="5dp"
+                android:textSize="15dp"
+                android:gravity="right"
+                android:text="@string/forget_text"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+
