@@ -13,103 +13,109 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="8dp"
-        android:background="@color/white" />
+        android:layout_height="30dp"
+        android:background="@color/bg3" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:background="@color/white"
-        android:orientation="vertical">
+        android:layout_height="120dp"
+        android:background="@color/bg2"
+        android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="@string/type1" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="@string/type2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="@string/type3" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:drawableTop="@mipmap/cuxiao"
+                android:background="#fff"
                 android:gravity="center"
-                android:text="四川菜" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:drawableTop="@mipmap/cuxiao"
-                android:gravity="center"
-                android:text="四川菜" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:drawableTop="@mipmap/cuxiao"
-                android:gravity="center"
-                android:text="四川菜" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:drawableTop="@mipmap/cuxiao"
-                android:gravity="center"
-                android:text="四川菜" />
-
+                android:text="@string/type4" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="@string/type5" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="@string/type6" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="@string/type7" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:drawableTop="@mipmap/cuxiao"
+                android:background="#fff"
                 android:gravity="center"
-                android:text="四川菜" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:drawableTop="@mipmap/cuxiao"
-                android:gravity="center"
-                android:text="四川菜" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:drawableTop="@mipmap/cuxiao"
-                android:gravity="center"
-                android:text="四川菜" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:drawableTop="@mipmap/cuxiao"
-                android:gravity="center"
-                android:text="四川菜" />
-
+                android:text="@string/type8" />
         </LinearLayout>
-
     </LinearLayout>
+
 
     <View style="@style/line_heng" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="#f8f8f8" />
+        android:background="@color/bg3" />
 
     <View style="@style/line_heng" />
 

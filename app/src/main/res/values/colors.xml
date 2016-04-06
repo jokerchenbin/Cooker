@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="bg" >#9df43e</color>
+    <color name="bg" >#FC7E6D</color>
+    <color name="bg2" >#EFEFEF</color>
+    <color name="bg3" >#F3EBE7</color>
+
     <color name="inChoose">#FFFFFF</color>
     <color name="search_tv_stroke">#ffc81a</color>
 

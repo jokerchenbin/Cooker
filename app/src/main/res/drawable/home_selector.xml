@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:state_checked="true"><bitmap android:gravity="center" android:src="@mipmap/shouyetianchong" android:tileMode="disabled" />
+    <item android:state_checked="true"><bitmap android:gravity="center" android:src="@mipmap/home_ico_active" android:tileMode="disabled" />
     </item>
-    <item android:state_selected="true"><bitmap android:gravity="center" android:src="@mipmap/shouyetianchong" android:tileMode="disabled" />
+    <item android:state_selected="true"><bitmap android:gravity="center" android:src="@mipmap/home_ico_active" android:tileMode="disabled" />
     </item>
-    <item android:state_pressed="true"><bitmap android:gravity="center" android:src="@mipmap/shouyetianchong" android:tileMode="disabled" />
+    <item android:state_pressed="true"><bitmap android:gravity="center" android:src="@mipmap/home_ico_active" android:tileMode="disabled" />
     </item>
-    <item><bitmap android:gravity="center" android:src="@mipmap/shouye" android:tileMode="disabled" />
+    <item><bitmap android:gravity="center" android:src="@mipmap/home_ico" android:tileMode="disabled" />
     </item>
 </selector>
