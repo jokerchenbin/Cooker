@@ -11,10 +11,22 @@
         android:layout_height="200dp"></com.daimajia.slider.library.SliderLayout>
 
 
-    <View
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@color/bg3" />
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@color/bg3">
+        <EditText
+            android:id="@+id/activity_search"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_editview"
+            android:drawableLeft="@mipmap/search_ico"
+            android:drawablePadding="@dimen/activity_horizontal_margin"
+            android:hint="@string/food"
+            android:paddingLeft="110dp"
+            android:textCursorDrawable="@drawable/cursor_bg" />
+    </LinearLayout>
 
 
     <LinearLayout

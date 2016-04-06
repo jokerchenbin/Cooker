@@ -46,6 +46,7 @@
                 android:background="@drawable/edittext_bg"
                 android:drawablePadding="@dimen/activity_horizontal_margin"
                 android:hint="@string/user_name"
+                android:text="13276386385"
                 android:paddingLeft="15dp"
                 android:textCursorDrawable="@drawable/cursor_bg" />
             <EditText
@@ -57,6 +58,7 @@
                 android:background="@drawable/edittext_bg"
                 android:drawablePadding="@dimen/activity_horizontal_margin"
                 android:hint="@string/user_password"
+                android:text="123456"
                 android:paddingLeft="15dp"
                 android:textCursorDrawable="@drawable/cursor_bg" />
             <Button
