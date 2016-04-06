@@ -1,5 +1,6 @@
 package com.mastercooker.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,6 +17,8 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -41,15 +44,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SecondPageFragment secondPageFragment;
     private ThirdPageFrag thirdPageFrag;
     private FourthPageFrag fourthPageFrag;
-    private RadioButton radioButton1,radioButton2,radioButton3,radioButton4;
+    private RadioButton radioButton1,radioButton2,radioButton3,radioButton4,radioButton5;
     private ViewPager viewPager;
     private TextView textView;
     private ImageView imageView;
+    private Context context;
+    private Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        context = this;
+        activity = this;
         initView();
 
 
@@ -66,10 +73,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         radioButton2 = (RadioButton) findViewById(R.id.radiobutton2);
         radioButton3 = (RadioButton) findViewById(R.id.radiobutton3);
         radioButton4 = (RadioButton) findViewById(R.id.radiobutton4);
+        radioButton5 = (RadioButton) findViewById(R.id.radiobutton_add);
         radioButton1.setOnClickListener(this);
         radioButton2.setOnClickListener(this);
         radioButton3.setOnClickListener(this);
         radioButton4.setOnClickListener(this);
+        radioButton5.setOnClickListener(this);
         viewPager = (ViewPager) findViewById(R.id.activity_main_framelayout);
         FragmentManager fragmentManager = getSupportFragmentManager();
         firstPageFrag = new FirstPageFrag();
@@ -114,6 +123,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textView.setText(R.string.about);
                 imageView.setImageResource(R.mipmap.me_ico);
                 break;
+            case R.id.radiobutton_add: // 我的
+                showAnim();
+                break;
         }
+    }
+    private void showAnim(){
+        Animation alpha= AnimationUtils.loadAnimation(context,R.anim.image_anim);
+        radioButton5.startAnimation(alpha);
     }
 }

@@ -77,6 +77,14 @@
                 android:paddingTop="8dp" />
 
             <RadioButton
+                android:id="@+id/radiobutton_add"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/add_selector" />
+
+            <RadioButton
                 android:id="@+id/radiobutton3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
