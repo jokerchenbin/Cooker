@@ -73,7 +73,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:button="@null"
-                android:drawableTop="@drawable/job_selector"
+                android:drawableTop="@drawable/collection_selector"
                 android:paddingTop="8dp" />
 
             <RadioButton
@@ -90,7 +90,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:button="@null"
-                android:drawableTop="@drawable/collection_selector"
+                android:drawableTop="@drawable/job_selector"
                 android:paddingTop="8dp" />
 
             <RadioButton

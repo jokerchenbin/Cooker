@@ -108,14 +108,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textView.setText(R.string.FirstPage);
                 imageView.setImageResource(R.mipmap.home_ico);
                 break;
-            case R.id.radiobutton2: // 兼职工作
+            case R.id.radiobutton2: // 搜索
                 viewPager.setCurrentItem(1);
                 textView.setText(R.string.search);
                 imageView.setImageResource(R.mipmap.smile_ico);
                 break;
-            case R.id.radiobutton3: // 我的
+            case R.id.radiobutton3: // 生活圈
                 viewPager.setCurrentItem(2);
-                textView.setText(R.string.collection);
+                textView.setText(R.string.life);
                 imageView.setImageResource(R.mipmap.collection_ico);
                 break;
             case R.id.radiobutton4: // 我的
