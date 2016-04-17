@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_bg"
+    android:orientation="vertical"
+    tools:context=".activity.ModifyPswActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@id/activity_login_logo"
+                android:layout_gravity="center"
+                android:background="@mipmap/login_bg_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:text="____________________修改密码____________________"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/old_psw"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_bg"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:hint="原密码"
+                android:paddingLeft="15dp"
+                android:textCursorDrawable="@drawable/cursor_bg" />
+            <EditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/new_psw"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:inputType="textPassword"
+                android:background="@drawable/edittext_bg"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:hint="新密码"
+                android:paddingLeft="15dp"
+                android:textCursorDrawable="@drawable/cursor_bg" />
+            <EditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/new_psw2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:inputType="textPassword"
+                android:background="@drawable/edittext_bg"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:hint="确认密码"
+                android:paddingLeft="15dp"
+                android:textCursorDrawable="@drawable/cursor_bg" />
+            <Button
+                android:id="@+id/changepsw_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:background="@color/login_btn_bg"
+                android:text="确 认"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+

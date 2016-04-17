@@ -1,16 +1,22 @@
 package com.mastercooker.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.mastercooker.R;
+import com.mastercooker.activity.ModifyPswActivity;
 
-public class FourthPageFrag extends Fragment {
+public class FourthPageFrag extends Fragment implements View.OnClickListener {
+    private LinearLayout layout;
+    private View view;
+
     public static FourthPageFrag newInstance() {
         return new FourthPageFrag();
     }
@@ -18,12 +24,29 @@ public class FourthPageFrag extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.four_page_frag, container, false);
+        view = inflater.inflate(R.layout.four_page_frag, container, false);
+        initView();
+        return view;
+    }
+
+
+    private void initView() {
+        layout = (LinearLayout) view.findViewById(R.id.four_page_modify);
+        layout.setOnClickListener(this);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //放置关于软件
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.four_page_modify:
+                startActivity(new Intent(getContext(), ModifyPswActivity.class));
+                break;
+        }
     }
 }

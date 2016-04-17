@@ -21,8 +21,6 @@
             android:name=".activity.MessageActivity"
             android:label="@string/title_activity_message" >
         </activity>
-
-
         <activity
             android:name=".activity.FoodListActivity"
             android:label="@string/title_activity_food_list" >
@@ -45,6 +43,11 @@
         <activity
             android:name=".activity.RegisterActivity"
             android:label="@string/title_activity_resiter"
+            android:theme="@style/ToolBar" >
+        </activity>
+        <activity
+            android:name=".activity.ModifyPswActivity"
+            android:label="@string/title_activity_modify_psw"
             android:theme="@style/ToolBar" >
         </activity>
     </application>

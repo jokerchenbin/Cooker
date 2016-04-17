@@ -43,4 +43,5 @@
     <string name="title_activity_full">FullActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_resiter">ResiterActivity</string>
+    <string name="title_activity_modify_psw">ModifyPsw</string>
 </resources>

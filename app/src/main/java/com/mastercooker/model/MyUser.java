@@ -15,7 +15,15 @@ public class MyUser extends BmobUser{
     private int age ;
     private String  imageUrl;
     private BmobRelation likes;
+    private Cook cook;
 
+    public Cook getCook() {
+        return cook;
+    }
+
+    public void setCook(Cook cook) {
+        this.cook = cook;
+    }
 
     public BmobRelation getLikes() {
         return likes;
