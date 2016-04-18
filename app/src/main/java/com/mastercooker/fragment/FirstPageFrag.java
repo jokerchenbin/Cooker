@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
@@ -19,11 +20,13 @@ import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.mastercooker.R;
 import com.mastercooker.activity.MessageActivity;
+import com.mastercooker.activity.ShowFoodActivity;
 import com.mastercooker.adapter.CookInfoAdapter;
 import com.mastercooker.model.Cook;
 import com.mastercooker.tools.FunctionUtils;
 import com.mastercooker.tools.ToastDiy;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -37,6 +40,8 @@ public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderCl
     private ListView mList;
     private View view;
     private List<Cook> cookList;
+    private TextView textView1,textView2,textView3,textView4,textView5,textView6,textView7,textView8;
+    private List<TextView> listTextView;
 
 
     public FirstPageFrag() {
@@ -71,13 +76,13 @@ public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderCl
             @Override
             public void onSuccess(List<Cook> list) {
                 cookList = list;
-                mList.setAdapter(new CookInfoAdapter(getContext(),list));
+                mList.setAdapter(new CookInfoAdapter(getContext(), list));
                 FunctionUtils.dissmisLoadingDialog();
             }
 
             @Override
             public void onError(int i, String s) {
-                ToastDiy.showShort(getContext(),s);
+                ToastDiy.showShort(getContext(), s);
                 FunctionUtils.dissmisLoadingDialog();
             }
         });
@@ -115,10 +120,10 @@ public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderCl
 
     private void showViewPager() {
         HashMap<String, Integer> file_maps = new HashMap<String, Integer>();
-        file_maps.put("Hannibal", R.mipmap.hannibal);
-        file_maps.put("Big Bang Theory", R.mipmap.bigbang);
-        file_maps.put("House of Cards", R.mipmap.house);
-        file_maps.put("Game of Thrones", R.mipmap.game_of_thrones);
+        file_maps.put("醋溜豆腐", R.mipmap.food1);
+        file_maps.put("彩椒鱿鱼", R.mipmap.food2);
+        file_maps.put("佛跳墙", R.mipmap.food3);
+        file_maps.put("菠萝鲤鱼", R.mipmap.food4);
 
         for (String name : file_maps.keySet()) {
             TextSliderView textSliderView = new TextSliderView(getContext());
@@ -146,15 +151,48 @@ public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderCl
     private void initView(View view) {
         mList = (ListView) view.findViewById(R.id.firstpage_list);
         View v = View.inflate(getContext(), R.layout.head, null);
+        textView1= (TextView) v.findViewById(R.id.head_type1);
+        textView2= (TextView) v.findViewById(R.id.head_type2);
+        textView3= (TextView) v.findViewById(R.id.head_type3);
+        textView4= (TextView) v.findViewById(R.id.head_type4);
+        textView5= (TextView) v.findViewById(R.id.head_type5);
+        textView6= (TextView) v.findViewById(R.id.head_type6);
+        textView7= (TextView) v.findViewById(R.id.head_type7);
+        textView8= (TextView) v.findViewById(R.id.head_type8);
+        listTextView = new ArrayList<>();
+        listTextView.add(textView1);
+        listTextView.add(textView2);
+        listTextView.add(textView3);
+        listTextView.add(textView4);
+        listTextView.add(textView5);
+        listTextView.add(textView6);
+        listTextView.add(textView7);
+        listTextView.add(textView8);
+        showFood();
         mSlider = (SliderLayout) v.findViewById(R.id.slider);
         mList.addHeaderView(v);
         mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getContext(), MessageActivity.class);
-                intent.putExtra("Cook",cookList.get(position-1));
+                intent.putExtra("Cook", cookList.get(position - 1));
                 startActivity(intent);
             }
         });
+    }
+    private void showFood(){
+        for(int i=0;i<listTextView.size();i++){
+            final int num = i;
+            listTextView.get(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent();
+                    intent.setClass(getContext(), ShowFoodActivity.class);
+                    intent.putExtra("type", num + 1);
+                    intent.putExtra("typeName",listTextView.get(num).getText().toString().trim());
+                    startActivity(intent);
+                }
+            });
+        }
     }
 }

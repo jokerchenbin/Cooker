@@ -11,22 +11,10 @@
         android:layout_height="200dp"></com.daimajia.slider.library.SliderLayout>
 
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:background="@color/bg3">
-        <EditText
-            android:id="@+id/activity_search"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:background="@drawable/rounded_editview"
-            android:drawableLeft="@mipmap/search_ico"
-            android:drawablePadding="@dimen/activity_horizontal_margin"
-            android:hint="@string/food"
-            android:paddingLeft="110dp"
-            android:textCursorDrawable="@drawable/cursor_bg" />
-    </LinearLayout>
+        android:layout_height="10dp"
+        android:background="@color/bg3" />
 
 
     <LinearLayout
@@ -43,7 +31,9 @@
             android:orientation="horizontal" >
 
             <TextView
+                android:id="@+id/head_type1"
                 android:layout_width="0dp"
+                android:clickable="true"
                 android:layout_height="match_parent"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
@@ -52,8 +42,10 @@
                 android:text="@string/type1" />
 
             <TextView
+                android:id="@+id/head_type2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:clickable="true"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:background="#fff"
@@ -61,8 +53,10 @@
                 android:text="@string/type2" />
 
             <TextView
+                android:id="@+id/head_type3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:clickable="true"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:background="#fff"
@@ -70,8 +64,10 @@
                 android:text="@string/type3" />
 
             <TextView
+                android:id="@+id/head_type4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:clickable="true"
                 android:layout_weight="1"
                 android:background="#fff"
                 android:gravity="center"
@@ -85,36 +81,44 @@
             android:orientation="horizontal" >
 
             <TextView
+                android:id="@+id/head_type5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:background="#fff"
                 android:gravity="center"
+                android:clickable="true"
                 android:text="@string/type5" />
 
             <TextView
+                android:id="@+id/head_type6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:background="#fff"
+                android:clickable="true"
                 android:gravity="center"
                 android:text="@string/type6" />
 
             <TextView
+                android:id="@+id/head_type7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="2dp"
+                android:clickable="true"
                 android:layout_weight="1"
                 android:background="#fff"
                 android:gravity="center"
                 android:text="@string/type7" />
 
             <TextView
+                android:id="@+id/head_type8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:background="#fff"
                 android:gravity="center"
                 android:text="@string/type8" />
@@ -140,6 +144,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:clickable="true"
             android:text="推荐菜品"
             android:textColor="@color/black"
             android:gravity="center_vertical"

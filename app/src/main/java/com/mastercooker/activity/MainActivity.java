@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ThirdPageFrag thirdPageFrag;
     private FourthPageFrag fourthPageFrag;
     private RadioButton radioButton1,radioButton2,radioButton3,radioButton4,radioButton5;
-    private ViewPager viewPager;
+    private  ViewPager viewPager;
     private TextView textView;
     private ImageView imageView;
     private Context context;
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listfraFragments.add(thirdPageFrag);
         listfraFragments.add(fourthPageFrag);
         FragmentAdapter fadpter = new FragmentAdapter(fragmentManager, listfraFragments);
-        viewPager.setOffscreenPageLimit(2);
+        viewPager.setOffscreenPageLimit(4);
         viewPager.setAdapter(fadpter);
         viewPager.setCurrentItem(0);
 
@@ -131,5 +131,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void showAnim(){
         Animation alpha= AnimationUtils.loadAnimation(context,R.anim.image_anim);
         radioButton5.startAnimation(alpha);
+    }
+
+    public  void  setViewPageItem(int item){
+        viewPager.setCurrentItem(item);
     }
 }
