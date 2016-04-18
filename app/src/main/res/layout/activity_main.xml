@@ -10,19 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/inChoose">
+
         <ImageView
             android:id="@+id/activity_bar_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/home_ico"
-            />
+            android:src="@mipmap/home_ico" />
+
         <TextView
             android:id="@+id/activity_main_tb_tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textColor="@color/bg"
             android:text="@string/FirstPage"
+            android:textColor="@color/bg"
             android:textSize="24sp" />
 
     </android.support.v7.widget.Toolbar>
@@ -31,6 +32,7 @@
         android:id="@+id/iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
     <View style="@style/line_heng" />
 
     <android.support.v4.view.ViewPager
@@ -42,6 +44,7 @@
         android:orientation="vertical"></android.support.v4.view.ViewPager>
 
     <View style="@style/line_heng" />
+
     <LinearLayout
 
         android:id="@+id/activity_main_ll"
@@ -50,6 +53,7 @@
         android:layout_alignParentBottom="true"
         android:background="@color/inChoose"
         android:orientation="horizontal">
+
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -69,20 +73,13 @@
 
             <RadioButton
                 android:id="@+id/radiobutton2"
-                android:layout_width="0dp"
+                android:layout_width="8dp"
                 android:layout_height="match_parent"
+                android:layout_marginRight="70dp"
                 android:layout_weight="1"
                 android:button="@null"
                 android:drawableTop="@drawable/collection_selector"
                 android:paddingTop="8dp" />
-
-            <RadioButton
-                android:id="@+id/radiobutton_add"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableTop="@drawable/add_selector" />
 
             <RadioButton
                 android:id="@+id/radiobutton3"
@@ -102,7 +99,9 @@
                 android:drawableTop="@drawable/me_selector"
                 android:paddingTop="8dp" />
         </RadioGroup>
-
-
     </LinearLayout>
+
+    <com.mastercooker.view.RadialButtonLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </RelativeLayout>

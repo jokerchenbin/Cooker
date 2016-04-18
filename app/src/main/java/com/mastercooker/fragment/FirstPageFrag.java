@@ -129,7 +129,6 @@ public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderCl
             TextSliderView textSliderView = new TextSliderView(getContext());
             // initialize a SliderLayout
             textSliderView
-                    .description(name)
                     .image(file_maps.get(name))
                     .setScaleType(BaseSliderView.ScaleType.Fit)
                     .setOnSliderClickListener(this);

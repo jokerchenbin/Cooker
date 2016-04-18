@@ -32,5 +32,7 @@
     <color name="black">#000000</color>
     <color name="main_color">#FF027FFD</color>
     <color name="login_btn_bg">#F65959</color>
+    <color name="red">#ffdc4b4e</color>
+    <color name="darker_red">#ff97373a</color>
 
 </resources>

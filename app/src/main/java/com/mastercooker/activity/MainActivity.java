@@ -73,12 +73,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         radioButton2 = (RadioButton) findViewById(R.id.radiobutton2);
         radioButton3 = (RadioButton) findViewById(R.id.radiobutton3);
         radioButton4 = (RadioButton) findViewById(R.id.radiobutton4);
-        radioButton5 = (RadioButton) findViewById(R.id.radiobutton_add);
+       // radioButton5 = (RadioButton) findViewById(R.id.radiobutton_add);
         radioButton1.setOnClickListener(this);
         radioButton2.setOnClickListener(this);
         radioButton3.setOnClickListener(this);
         radioButton4.setOnClickListener(this);
-        radioButton5.setOnClickListener(this);
+        //radioButton5.setOnClickListener(this);
         viewPager = (ViewPager) findViewById(R.id.activity_main_framelayout);
         FragmentManager fragmentManager = getSupportFragmentManager();
         firstPageFrag = new FirstPageFrag();
@@ -123,9 +123,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textView.setText(R.string.about);
                 imageView.setImageResource(R.mipmap.me_ico);
                 break;
-            case R.id.radiobutton_add: // 我的
+           /* case R.id.radiobutton_add: // 我的
                 showAnim();
-                break;
+                break;*/
         }
     }
     private void showAnim(){

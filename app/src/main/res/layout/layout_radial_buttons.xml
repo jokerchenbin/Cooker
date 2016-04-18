@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/btn_blue"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="8dp"
+        android:background="@mipmap/post_ico"
+        android:clickable="true"
+        android:gravity="center"
+        android:minHeight="75dp"
+        android:minWidth="75dp" />
+
+    <TextView
+        android:id="@+id/btn_indigo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="8dp"
+        android:background="@mipmap/write_food"
+        android:clickable="true"
+        android:gravity="center"
+        android:minHeight="75dp"
+        android:minWidth="75dp" />
+
+    <TextView
+        android:id="@+id/btn_main"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/states_circle_red"
+        android:clickable="true"
+        android:gravity="center"
+        android:minHeight="75dp"
+        android:minWidth="75dp"
+        android:textColor="@color/white"
+        android:text="中间" />
+
+</FrameLayout>
