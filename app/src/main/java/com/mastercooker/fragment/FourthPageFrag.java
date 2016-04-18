@@ -12,9 +12,10 @@ import android.widget.Toast;
 
 import com.mastercooker.R;
 import com.mastercooker.activity.ModifyPswActivity;
+import com.mastercooker.activity.MyCollectionActivity;
 
 public class FourthPageFrag extends Fragment implements View.OnClickListener {
-    private LinearLayout layout;
+    private LinearLayout layout1,layout2;
     private View view;
 
     public static FourthPageFrag newInstance() {
@@ -31,8 +32,10 @@ public class FourthPageFrag extends Fragment implements View.OnClickListener {
 
 
     private void initView() {
-        layout = (LinearLayout) view.findViewById(R.id.four_page_modify);
-        layout.setOnClickListener(this);
+        layout1 = (LinearLayout) view.findViewById(R.id.four_page_modify);
+        layout1.setOnClickListener(this);
+        layout2= (LinearLayout) view.findViewById(R.id.four_page_frag_colletion);
+        layout2.setOnClickListener(this);
     }
 
     @Override
@@ -46,6 +49,9 @@ public class FourthPageFrag extends Fragment implements View.OnClickListener {
         switch (v.getId()){
             case R.id.four_page_modify:
                 startActivity(new Intent(getContext(), ModifyPswActivity.class));
+                break;
+            case R.id.four_page_frag_colletion:
+                startActivity(new Intent(getContext(), MyCollectionActivity.class));
                 break;
         }
     }

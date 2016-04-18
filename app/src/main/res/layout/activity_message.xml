@@ -19,7 +19,7 @@
             android:adjustViewBounds="true"
             android:onClick="onClickBack"
             android:scaleType="fitStart"
-            android:src="@mipmap/ic_back" />
+            android:src="@mipmap/back" />
 
         <TextView
             android:id="@+id/activity_message_tb_tv_title"
@@ -35,10 +35,11 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="end"
+            android:layout_marginRight="10dp"
             android:adjustViewBounds="true"
             android:scaleType="fitEnd"
             android:onClick="onClickCollect"
-            android:src="@mipmap/ic_collection_gray" />
+            android:src="@mipmap/is_collect_not" />
     </android.support.v7.widget.Toolbar>
 
     <ScrollView

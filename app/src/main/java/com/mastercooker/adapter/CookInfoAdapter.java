@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.mastercooker.R;
 import com.mastercooker.model.Cook;
-import com.mastercooker.tools.Logger;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
@@ -50,24 +49,19 @@ public class CookInfoAdapter extends BaseAdapter {
         ViewHolder holder;
         Cook cook = list.get(position);
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.job_info_item, parent,false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.cook_info_item, parent,false);
             holder = new ViewHolder();
-            holder.tv_name = (TextView) convertView.findViewById(R.id.job_info_item_name);
-            holder.tv_tag1 = (TextView) convertView.findViewById(R.id.job_info_item_tag1);
-            holder.tv_tag2 = (TextView) convertView.findViewById(R.id.job_info_item_tag2);
-            holder.tv_tag3 = (TextView) convertView.findViewById(R.id.job_info_item_tag3);
-            holder.tv_tag4 = (TextView) convertView.findViewById(R.id.job_info_item_tag4);
-            holder.tv_place = (TextView) convertView.findViewById(R.id.job_info_item_place);
-            holder.tv_date = (TextView) convertView.findViewById(R.id.job_info_item_date);
-            holder.tv_money = (TextView) convertView.findViewById(R.id.job_info_item_money);
-            holder.iv_photo = (ImageView) convertView.findViewById(R.id.job_info_item_photo);
+            holder.iv_photo = (ImageView) convertView.findViewById(R.id.cook_info_item_photo);
+            holder.tv_food_name=(TextView)convertView.findViewById(R.id.cook_info_item_food_name);
+            holder.tv_keyword= (TextView) convertView.findViewById(R.id.cook_info_item_keyword);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
         //绑定数据
-        holder.tv_name.setText(cook.getName());
-        ImageLoader.getInstance().displayImage(cook.getFile().getFileUrl(context),holder.iv_photo);
+        holder.tv_food_name.setText(cook.getName());
+        ImageLoader.getInstance().displayImage(cook.getFile().getFileUrl(context), holder.iv_photo);
+        holder.tv_keyword.setText(cook.getKeywords());
         return convertView;
     }
 
@@ -77,7 +71,7 @@ public class CookInfoAdapter extends BaseAdapter {
 
 
     private class ViewHolder {
-        TextView tv_name, tv_tag1, tv_tag2, tv_tag3, tv_tag4, tv_place, tv_date, tv_money;
+        TextView tv_food_name,tv_keyword;
         ImageView iv_photo;
     }
 }

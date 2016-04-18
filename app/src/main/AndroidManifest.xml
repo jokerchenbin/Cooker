@@ -50,6 +50,8 @@
             android:label="@string/title_activity_modify_psw"
             android:theme="@style/ToolBar" >
         </activity>
+        <activity android:name=".activity.MyCollectionActivity" >
+        </activity>
     </application>
 
 </manifest>
