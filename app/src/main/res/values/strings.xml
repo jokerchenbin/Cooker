@@ -56,5 +56,6 @@
     <string name="indigo">Indigo</string>
     <string name="undefined">Undefined</string>
     <string name="click_the_button">Click the \'Red\' button</string>
+    <string name="title_activity_search_result">SearchResultActivity</string>
 
 </resources>

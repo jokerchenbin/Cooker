@@ -54,6 +54,8 @@
         </activity>
         <activity android:name=".activity.ShowFoodActivity" >
         </activity>
+        <activity android:name=".activity.SearchResultActivity" >
+        </activity>
     </application>
 
 </manifest>

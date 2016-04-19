@@ -5,6 +5,8 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.SoundEffectConstants;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -99,6 +101,8 @@ public class RadialButtonLayout extends FrameLayout {
     }
 
     public void onMainButtonClicked(final View btn) {
+        Animation anim = AnimationUtils.loadAnimation(context,R.anim.image_anim);
+        btn.startAnimation(anim);
         int resId = 0;
         if (isOpen) {
             hide(tv_01);
@@ -106,12 +110,12 @@ public class RadialButtonLayout extends FrameLayout {
             isOpen = false;
             resId = R.string.close;
         } else {
-            show(tv_01, 4, 250);
-            show(tv_02, 5, 250);
+            show(tv_01, 4, 110);
+            show(tv_02, 5, 110);
             isOpen = true;
             resId = R.string.open;
         }
-        showToast(resId);
+        //showToast(resId);
         btn.playSoundEffect(SoundEffectConstants.CLICK);
     }
 
@@ -121,14 +125,16 @@ public class RadialButtonLayout extends FrameLayout {
 
             case R.id.btn_blue:
                 resId = R.string.blue;
+                //写帖子
                 break;
             case R.id.btn_indigo:
                 resId = R.string.indigo;
+                //发布菜谱
                 break;
             default:
                 resId = R.string.undefined;
         }
-        showToast(resId);
+       //showToast(resId);
         btn.playSoundEffect(SoundEffectConstants.CLICK);
     }
 
@@ -138,7 +144,6 @@ public class RadialButtonLayout extends FrameLayout {
                 .translationX(0)
                 .translationY(0)
                 .start();
-        //child.setVisibility(View.GONE);
     }
 
     private final void show(final View child, final int position, final int radius) {

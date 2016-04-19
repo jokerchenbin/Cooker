@@ -6,40 +6,39 @@
 
     <TextView
         android:id="@+id/btn_blue"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginBottom="8dp"
         android:background="@mipmap/post_ico"
         android:clickable="true"
         android:gravity="center"
-        android:minHeight="75dp"
+        android:minHeight="50dp"
         android:minWidth="75dp" />
 
     <TextView
         android:id="@+id/btn_indigo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginBottom="8dp"
         android:background="@mipmap/write_food"
         android:clickable="true"
         android:gravity="center"
         android:minHeight="75dp"
-        android:minWidth="75dp" />
+        android:minWidth="50dp" />
 
     <TextView
         android:id="@+id/btn_main"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginBottom="9dp"
-        android:background="@drawable/states_circle_red"
+        android:background="@mipmap/menu_add_ico"
         android:clickable="true"
         android:gravity="center"
-        android:minHeight="75dp"
-        android:minWidth="75dp"
-        android:textColor="@color/white"
-        android:text="中间" />
+        android:minHeight="50dp"
+        android:minWidth="50dp"
+        android:textColor="@color/white" />
 
 </FrameLayout>
