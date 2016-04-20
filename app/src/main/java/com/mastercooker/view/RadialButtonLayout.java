@@ -1,6 +1,7 @@
 package com.mastercooker.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.SoundEffectConstants;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mastercooker.R;
+import com.mastercooker.activity.PostFoodActivity;
 import com.mastercooker.tools.ToastDiy;
 
 import java.lang.ref.WeakReference;
@@ -24,9 +26,6 @@ public class RadialButtonLayout extends FrameLayout {
 
     private final static long DURATION_SHORT = 400;
     private WeakReference<Context> weakContext;
-    View btnMain;
-    View btnBlue;
-    View btnIndigo;
     private Context context;
     private boolean isOpen = false;
     private Toast toast;
@@ -110,8 +109,8 @@ public class RadialButtonLayout extends FrameLayout {
             isOpen = false;
             resId = R.string.close;
         } else {
-            show(tv_01, 4, 110);
-            show(tv_02, 5, 110);
+            show(tv_01, 1, 180);
+            show(tv_02, 3, 180);
             isOpen = true;
             resId = R.string.open;
         }
@@ -130,6 +129,9 @@ public class RadialButtonLayout extends FrameLayout {
             case R.id.btn_indigo:
                 resId = R.string.indigo;
                 //发布菜谱
+                Intent intent=new Intent();
+                intent.setClass(getContext(), PostFoodActivity.class);
+                getContext().startActivity(intent);
                 break;
             default:
                 resId = R.string.undefined;
@@ -147,18 +149,18 @@ public class RadialButtonLayout extends FrameLayout {
     }
 
     private final void show(final View child, final int position, final int radius) {
-        float angleDeg = 112.f;
+        float angleDeg = 225.f;
         int dist = radius;
         child.setVisibility(View.VISIBLE);
         switch (position) {
             case 1:
-                angleDeg += 0.f;
+                angleDeg -= 10.f;
                 break;
             case 2:
                 angleDeg += 45.f;
                 break;
             case 3:
-                angleDeg += 90.f;
+                angleDeg += 100.f;
                 break;
             case 4:
                 angleDeg += 135.f;

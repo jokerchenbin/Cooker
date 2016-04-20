@@ -111,12 +111,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.radiobutton2: // 搜索
                 viewPager.setCurrentItem(1);
                 textView.setText(R.string.search);
-                imageView.setImageResource(R.mipmap.smile_ico);
+                imageView.setImageResource(R.mipmap.collection_ico);
                 break;
             case R.id.radiobutton3: // 生活圈
                 viewPager.setCurrentItem(2);
                 textView.setText(R.string.life);
-                imageView.setImageResource(R.mipmap.collection_ico);
+                imageView.setImageResource(R.mipmap.smile_ico);
                 break;
             case R.id.radiobutton4: // 我的
                 viewPager.setCurrentItem(3);
