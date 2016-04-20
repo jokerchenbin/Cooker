@@ -38,6 +38,7 @@ import com.mastercooker.R;
 import com.mastercooker.view.AppLoadingDialog;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -342,9 +343,10 @@ public class FunctionUtils {
 
         Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // 下面这句指定调用相机拍照后的照片存储的路径
-        // fileName = "comment_" + FunctionUtils.getDate() + ".jpg";
+         fileName = "comment_" + FunctionUtils.getDate() + ".jpg";
         i.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(getFilePath(), fileName)));
-        activity.startActivityForResult(i, AppConfig.DEFAULT_CAMERA_RESULT);
+        //activity.startActivityForResult(i, AppConfig.DEFAULT_CAMERA_RESULT);
+        startPhotoZoom(activity,"", Uri.fromFile(new File(getFilePath(), fileName)),200,200);
     }
 
     /**
@@ -371,7 +373,8 @@ public class FunctionUtils {
          * 这个地方小马有个疑问，希望高手解答下： 就是这个数据URI与类型为什么要分两种形式来写呀？有什么区别？
          */
         intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
-        activity.startActivityForResult(intent, AppConfig.DEFAULT_REQUEST);
+        //activity.startActivityForResult(intent, AppConfig.DEFAULT_REQUEST);
+        startPhotoZoom(activity, "",MediaStore.Images.Media.EXTERNAL_CONTENT_URI, 200, 200);
     }
 
     // 根据路径获得图片并压缩，返回bitmap用于显示
@@ -449,6 +452,27 @@ public class FunctionUtils {
         return new BitmapDrawable(bitmap);
     }
 
+    /****
+     * 通过目录和文件名来获取Uri
+     * @param strFileDir   目录
+     * @param strFileName   文件名
+     * @return  Uri
+     * @throws IOException  IO异常
+     */
+    public static Uri getUriByFileDirAndFileName(String strFileDir,String strFileName) throws IOException {
+        Uri uri = null;
+        File fileDir = new File(Environment.getExternalStorageDirectory(), strFileDir);  //定义目录
+        if (!fileDir.exists()) {   //判断目录是否存在
+            fileDir.mkdirs();      //如果不存在则先创建目录
+        }
+        File file = new File(fileDir, strFileName);   //定义文件
+        if (!file.exists()) {  //判断文件是否存在
+            file.createNewFile();    //如果不存在则先创建文件
+        }
+        uri = Uri.fromFile(file);  //获取Uri
+        return uri;
+    }
+
     /**
      * 裁剪图片方法实现
      *
@@ -468,7 +492,7 @@ public class FunctionUtils {
         intent.putExtra("outputY", hight);
         intent.putExtra("scale", true);
         intent.putExtra("scaleUpIfNeeded", true);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(outFile)));
+        //intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(outFile)));
         intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
         intent.putExtra("return-data", false);
         activity.startActivityForResult(intent, AppConfig.DEFAULT_CROP_RESULT);

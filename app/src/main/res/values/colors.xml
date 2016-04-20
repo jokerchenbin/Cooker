@@ -7,6 +7,16 @@
     <color name="inChoose">#FFFFFF</color>
     <color name="search_tv_stroke">#ffc81a</color>
 
+    <color name="trans">#00000000</color>
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="actionsheet_red">#FD4A2E</color>
+    <color name="actionsheet_gray">#8F8F8F</color>
+    <color name="text_defulat">#8F8F8F</color>
+    <color name="layout_press">#e7e7e7</color>
+
+    <color name="tab_select">#FFFFD802</color>
+    <color name="sign_bg">#56bc23</color>
 
     <!-- words A color -->
     <color name="a">#fe601a</color>

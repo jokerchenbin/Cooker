@@ -50,6 +50,7 @@ public class RadialButtonLayout extends FrameLayout {
         this.context = context;
         weakContext = new WeakReference<Context>(context);
         view = LayoutInflater.from(context).inflate(R.layout.layout_radial_buttons, this);
+
         initView();
     }
 
@@ -145,6 +146,8 @@ public class RadialButtonLayout extends FrameLayout {
                 .setDuration(DURATION_SHORT)
                 .translationX(0)
                 .translationY(0)
+                .alpha(1.0f)
+                .alphaBy(0.5f)
                 .start();
     }
 
@@ -185,5 +188,6 @@ public class RadialButtonLayout extends FrameLayout {
                 .translationX(x)
                 .translationY(y)
                 .start();
+
     }
 }
