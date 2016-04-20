@@ -271,6 +271,10 @@ public class PostFoodActivity extends AppCompatActivity implements View.OnClickL
      * @param way4
      */
     private boolean isContentOk(String name, String description, String food, String keyword, String way1, String way2, String way3, String way4) {
+        if (tempImgPath.isEmpty()){
+            err = "请上传菜谱图片";
+            return false;
+        }
         if (name.isEmpty()) {
             err = "请输入菜谱名称";
             return false;
