@@ -109,8 +109,8 @@ public class RadialButtonLayout extends FrameLayout {
             isOpen = false;
             resId = R.string.close;
         } else {
-            show(tv_01, 1, 180);
-            show(tv_02, 3, 180);
+            show(tv_01, 1, 130);
+            show(tv_02, 3, 130);
             isOpen = true;
             resId = R.string.open;
         }
@@ -124,14 +124,14 @@ public class RadialButtonLayout extends FrameLayout {
 
             case R.id.btn_blue:
                 resId = R.string.blue;
-                //写帖子
-                break;
-            case R.id.btn_indigo:
-                resId = R.string.indigo;
                 //发布菜谱
                 Intent intent=new Intent();
                 intent.setClass(getContext(), PostFoodActivity.class);
                 getContext().startActivity(intent);
+                break;
+            case R.id.btn_indigo:
+                resId = R.string.indigo;
+                //写帖子
                 break;
             default:
                 resId = R.string.undefined;
