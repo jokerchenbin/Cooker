@@ -22,7 +22,7 @@
 
     <string name="describe">概括描述
     </string>
-    <string name="food">菜名
+    <string name="food">材料
     </string>
     <string name="keywords">关键步骤
     </string>
@@ -57,5 +57,15 @@
     <string name="undefined">Undefined</string>
     <string name="click_the_button">Click the \'Red\' button</string>
     <string name="title_activity_search_result">SearchResultActivity</string>
+    <string-array name="languages">
+        <item>农家菜</item>
+        <item>素菜</item>
+        <item>荤菜</item>
+        <item>减肥</item>
+        <item>烘焙</item>
+        <item>创意菜</item>
+        <item>开胃菜</item>
+        <item>面食</item>
+    </string-array>
 
 </resources>
