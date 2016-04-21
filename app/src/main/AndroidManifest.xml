@@ -58,6 +58,8 @@
         </activity>
         <activity android:name=".activity.PostFoodActivity" >
         </activity>
+        <activity android:name=".activity.DetailPostActivity" >
+        </activity>
     </application>
 
 </manifest>

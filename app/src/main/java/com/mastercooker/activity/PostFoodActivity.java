@@ -25,6 +25,7 @@ import com.bmob.btp.callback.UploadListener;
 import com.mastercooker.Configs;
 import com.mastercooker.R;
 import com.mastercooker.model.Cook;
+import com.mastercooker.model.MyUser;
 import com.mastercooker.tools.FileTools;
 import com.mastercooker.tools.FunctionUtils;
 import com.mastercooker.tools.Logger;
@@ -53,6 +54,7 @@ public class PostFoodActivity extends AppCompatActivity implements View.OnClickL
     private int type = 1;
     private ImageView iv_header;
     private String tempImgPath;
+    private String postName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,8 @@ public class PostFoodActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void initView() {
+        MyUser myUser = BmobUser.getCurrentUser(context, MyUser.class);
+        postName=myUser.getUsername().toString();
         spinner = (Spinner) findViewById(R.id.activity_post_food_spinner);
         String[] mItems = getResources().getStringArray(R.array.languages);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, mItems);
@@ -238,6 +242,8 @@ public class PostFoodActivity extends AppCompatActivity implements View.OnClickL
         String mess = temp + "<p> 1)" + way1 + "</p> " + "<p> 2)" + way2 + "</p> " + "<p> 3)" + way3 + "</p> " + "<p> 4)" + way4 + "</p> ";
         cook.setMessage(mess);
         cook.setFile(file);
+        cook.setType(type);
+        cook.setPostName(postName);
         cook.save(context, new SaveListener() {
             @Override
             public void onSuccess() {

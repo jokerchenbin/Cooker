@@ -1,120 +1,75 @@
 package com.mastercooker.fragment;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
+
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.mastercooker.activity.MessageActivity;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import com.mastercooker.R;
-import com.mastercooker.adapter.CookAdapter;
-import com.mastercooker.database.DBCookOperation;
+import com.mastercooker.activity.DetailPostActivity;
+import com.mastercooker.activity.MessageActivity;
+import com.mastercooker.adapter.CookInfoAdapter;
+import com.mastercooker.adapter.PostAdapter;
 import com.mastercooker.model.Cook;
-import com.mastercooker.view.WithTextImageButton;
+import com.mastercooker.model.Post;
+import com.mastercooker.tools.FunctionUtils;
+import com.mastercooker.tools.ToastDiy;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.listener.FindListener;
 
 public class ThirdPageFrag extends Fragment {
+    private View view;
+    private ListView mList;
+    private List<Post> PostList;
 
-    private CookAdapter cookLogAdapter;
-    private WithTextImageButton withTextImageButton;
-    private RecyclerView recyclerView;
-    private Receiver mReceiver;
+    public ThirdPageFrag() {
+        super();
+    }
 
     public static ThirdPageFrag newInstance() {
         return new ThirdPageFrag();
     }
-
-    @Nullable
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.third_page_frag, container, false);
+        if (view == null) {
+            view = inflater.inflate(R.layout.third_page_frag, container, false);
+            initView(view);
+        }
+        getData();
+        return view;
     }
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        withTextImageButton = (WithTextImageButton) view.findViewById(R.id.activity_main_wtib_bottom_fourth);
-        recyclerView = (RecyclerView) view.findViewById(R.id.third_page_frag_rv);
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(layoutManager);
-
-        cookLogAdapter = new CookAdapter(getContext());
-        recyclerView.setAdapter(cookLogAdapter);
-
-        fresh();
-
-        cookLogAdapter.setOnItemClickListener(new CookAdapter.OnItemClickListener() {
+    private void getData() {
+        BmobQuery<Post> query = new BmobQuery<>();
+        query.findObjects(getContext(), new FindListener<Post>() {
             @Override
-            public void OnItemClick(Cook cook) {
-                Intent intent = new Intent(getContext(), MessageActivity.class);
-                intent.putExtra("Cook", cook);
-                startActivity(intent);
+            public void onSuccess(List<Post> list) {
+                PostList = list;
+                mList.setAdapter(new PostAdapter(getContext(), list));
+            }
+
+            @Override
+            public void onError(int i, String s) {
+                ToastDiy.showShort(getContext(), s);
             }
         });
     }
 
-
-    @Override
-    public void onResume() {
-        fresh();
-        super.onResume();
-    }
-
-    @Override
-    public void onStart() {
-        fresh();
-         //在代码中注册Receiver,一定要结束在onDestroy(如果在onStart中注册,则需要在onStop中结束
-        mReceiver = new Receiver();
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("com.mastercooker_ACTION");
-        getActivity().registerReceiver(mReceiver, intentFilter);
-        super.onStart();
-    }
-
-    @Override
-    public void onStop() {
-        getActivity().unregisterReceiver(mReceiver);
-        super.onStop();
-    }
-
-    @Override
-    public void onInflate(Context context, AttributeSet attrs, Bundle savedInstanceState) {
-        super.onInflate(context, attrs, savedInstanceState);
-        onView();
-    }
-
-    public void onView() {
-        if (cookLogAdapter.getItemCount() > 0) {
-            withTextImageButton.setVisibility(View.GONE);
-            recyclerView.setVisibility(View.VISIBLE);
-        } else {
-            withTextImageButton.setVisibility(View.VISIBLE);
-            recyclerView.setVisibility(View.GONE);
-        }
-    }
-
-    public void fresh() {
-        DBCookOperation dbCookOperation = new DBCookOperation(getContext());
-        ArrayList<Cook> cooks = dbCookOperation.QueryAll();
-        cookLogAdapter.addAll(cooks);
-        onView();
-    }
-
-    public class Receiver extends BroadcastReceiver {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            fresh();
-        }
+    private void initView(View view) {
+        mList= (ListView) view.findViewById(R.id.third_page_frag_list);
+        mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getContext(), DetailPostActivity.class);
+                intent.putExtra("Post", PostList.get(position));
+                startActivity(intent);
+            }
+        });
     }
 }

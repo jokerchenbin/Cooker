@@ -18,12 +18,26 @@ public class Cook extends BmobObject{
     protected int count;//访问次数
     protected int f_count;//收藏数
     protected int r_count;//评论读数
+    protected  int type;
+    protected String postName;
+
+    public String getPostName() {
+        return postName;
+    }
+
+    public void setPostName(String postName) {
+        this.postName = postName;
+    }
+
     private BmobFile file;
 
+    public int getType() {
+        return type;
+    }
 
-
-
-
+    public void setType(int type) {
+        this.type = type;
+    }
 
     @Override
     public String toString() {
