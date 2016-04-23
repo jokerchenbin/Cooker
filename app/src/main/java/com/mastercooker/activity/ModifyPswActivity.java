@@ -41,25 +41,28 @@ public class ModifyPswActivity extends AppCompatActivity {
         changepsw_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                old=old_psw.getText().toString().trim();
-                new1=new_psw.getText().toString().trim();
-                new2=new_psw2.getText().toString().trim();
-               BmobUser.updateCurrentUserPassword(context, old, new1, new UpdateListener() {
-                   @Override
-                   public void onSuccess() {
-                       ToastDiy.showShort(context, "密码修改成功");
-                       FunctionUtils.dissmisLoadingDialog();
-                       finish();
-                   }
+                old = old_psw.getText().toString().trim();
+                new1 = new_psw.getText().toString().trim();
+                new2 = new_psw2.getText().toString().trim();
+                BmobUser.updateCurrentUserPassword(context, old, new1, new UpdateListener() {
+                    @Override
+                    public void onSuccess() {
+                        ToastDiy.showShort(context, "密码修改成功");
+                        FunctionUtils.dissmisLoadingDialog();
+                        finish();
+                    }
 
-                   @Override
-                   public void onFailure(int i, String s) {
-                       ToastDiy.showShort(context, s);
-                       FunctionUtils.dissmisLoadingDialog();
-                   }
-               });
+                    @Override
+                    public void onFailure(int i, String s) {
+                        ToastDiy.showShort(context, s);
+                        FunctionUtils.dissmisLoadingDialog();
+                    }
+                });
             }
         });
+    }
+    public void onClickBack(View view) {
+        this.finish();
     }
 
 }

@@ -60,6 +60,8 @@
         </activity>
         <activity android:name=".activity.DetailPostActivity" >
         </activity>
+        <activity android:name=".activity.ClassifyPostActivity" >
+        </activity>
     </application>
 
 </manifest>

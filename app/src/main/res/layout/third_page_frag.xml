@@ -21,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp">
             <TextView
+                android:id="@+id/third_page_frag_type1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -32,6 +33,7 @@
                 android:gravity="center"
                 android:text="秀厨艺"/>
             <TextView
+                android:id="@+id/third_page_frag_type2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -47,6 +49,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="5dp">
             <TextView
+                android:id="@+id/third_page_frag_type3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -58,6 +61,7 @@
                 android:gravity="center"
                 android:text="养生小知识"/>
             <TextView
+                android:id="@+id/third_page_frag_type4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

@@ -116,8 +116,8 @@
             </LinearLayout>
             <ListView
                 android:id="@+id/activity_detail_post_list"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
             </ListView>
         </LinearLayout>
     </ScrollView>
@@ -139,6 +139,7 @@
         <TextView
             android:id="@+id/activity_detail_post_bt"
             android:layout_width="0dp"
+            android:clickable="true"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
             android:background="@drawable/rounded_textview1"

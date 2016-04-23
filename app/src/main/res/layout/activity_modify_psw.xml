@@ -18,6 +18,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
+                android:id="@+id/activity_message_tb_iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:adjustViewBounds="true"
+                android:onClick="onClickBack"
+                android:scaleType="fitStart"
+                android:src="@mipmap/back" />
+            <ImageView
                 android:id="@id/activity_login_logo"
                 android:layout_gravity="center"
                 android:background="@mipmap/login_bg_logo"
