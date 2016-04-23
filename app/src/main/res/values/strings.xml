@@ -67,5 +67,11 @@
         <item>开胃菜</item>
         <item>面食</item>
     </string-array>
+    <string-array name="postType">
+        <item>秀厨艺</item>
+        <item>闲聊</item>
+        <item>养生小知识</item>
+        <item>随感</item>
+    </string-array>
 
 </resources>

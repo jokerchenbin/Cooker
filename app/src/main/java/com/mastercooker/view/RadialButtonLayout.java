@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.mastercooker.R;
 import com.mastercooker.activity.PostFoodActivity;
+import com.mastercooker.activity.WritePostActivity;
 import com.mastercooker.tools.ToastDiy;
 
 import java.lang.ref.WeakReference;
@@ -133,6 +134,9 @@ public class RadialButtonLayout extends FrameLayout {
             case R.id.btn_indigo:
                 resId = R.string.indigo;
                 //写帖子
+                Intent intent1=new Intent();
+                intent1.setClass(getContext(), WritePostActivity.class);
+                getContext().startActivity(intent1);
                 break;
             default:
                 resId = R.string.undefined;
