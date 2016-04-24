@@ -53,7 +53,7 @@ public class PostFoodActivity extends AppCompatActivity implements View.OnClickL
     private Context context;
     private int type = 1;
     private ImageView iv_header;
-    private String tempImgPath;
+    private String tempImgPath="";
     private String postName;
 
     @Override
@@ -170,10 +170,6 @@ public class PostFoodActivity extends AppCompatActivity implements View.OnClickL
      * 方法描述:  图片点击的动画加载
      */
     private void showPicAnim() {
-       /* //加载 点击动画
-        Animation alpha = AnimationUtils.loadAnimation(context, R.anim.image_anim);
-        iv_header.startAnimation(alpha);*/
-
         //弹出头像选择
         if (!FileTools.hasSdcard()) {
             Toast.makeText(context, "没有找到SD卡，请检查SD卡是否存在", Toast.LENGTH_SHORT).show();
