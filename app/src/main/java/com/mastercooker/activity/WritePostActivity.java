@@ -155,6 +155,7 @@ public class WritePostActivity extends AppCompatActivity implements View.OnClick
         post.setDescription(des);
         post.setContent(content);
         post.setImage(file);
+        post.setCommentNumber(0);
         post.setPostType(type);
         post.save(context, new SaveListener() {
             @Override
