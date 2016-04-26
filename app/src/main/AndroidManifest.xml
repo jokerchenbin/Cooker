@@ -64,6 +64,10 @@
         </activity>
         <activity android:name=".activity.WritePostActivity" >
         </activity>
+        <activity android:name=".activity.MyFoodActivity" >
+        </activity>
+        <activity android:name=".activity.MyPostActivity" >
+        </activity>
     </application>
 
 </manifest>

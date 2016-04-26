@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".activity.MyPostActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/activity_message_tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg">
+
+        <ImageView
+            android:id="@+id/activity_message_tb_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:adjustViewBounds="true"
+            android:onClick="onClickBack"
+            android:scaleType="fitStart"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:id="@+id/activity_message_tb_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/bg"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:text="我的帖子"/>
+
+    </android.support.v7.widget.Toolbar>
+    <ListView
+        android:id="@+id/activity_my_post_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+</LinearLayout>

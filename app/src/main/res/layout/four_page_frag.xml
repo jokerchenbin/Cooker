@@ -16,6 +16,7 @@
             android:layout_gravity="center"
             android:src="@mipmap/me_head_ico"/>
         <TextView
+            android:id="@+id/four_page_frag_tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -31,7 +32,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/four_page_frag_colletion"
+            android:id="@+id/four_page_frag_collection"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -90,6 +91,7 @@
                 android:src="@mipmap/go_ico" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/four_page_myFood"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -108,7 +110,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/activity_vertical_margin"
                 android:gravity="center_vertical"
-                android:text="我的信息"
+                android:text="我的菜谱"
                 android:textColor="#747474"
                 android:layout_weight="10"
                 android:textSize="20sp" />
@@ -119,6 +121,7 @@
                 android:src="@mipmap/go_ico" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/four_page_myPost"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="50dp"
