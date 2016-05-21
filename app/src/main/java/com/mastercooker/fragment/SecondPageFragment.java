@@ -23,7 +23,6 @@ import com.mastercooker.R;
 import com.mastercooker.activity.SearchResultActivity;
 import com.mastercooker.adapter.CookAdapter;
 import com.mastercooker.adapter.CookInfoAdapter;
-import com.mastercooker.database.DBManager;
 import com.mastercooker.model.Cook;
 import com.mastercooker.model.CookStore;
 import com.mastercooker.model.MyUser;
@@ -160,7 +159,6 @@ public class SecondPageFragment extends Fragment {
                         public void onSuccess() {
 
                         }
-
                         @Override
                         public void onFailure(int i, String s) {
 

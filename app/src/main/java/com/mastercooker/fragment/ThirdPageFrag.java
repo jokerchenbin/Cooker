@@ -54,6 +54,7 @@ public class ThirdPageFrag extends Fragment {
 
     private void getData() {
         BmobQuery<Post> query = new BmobQuery<>();
+        //query.order("createdAt");
         query.findObjects(getContext(), new FindListener<Post>() {
             @Override
             public void onSuccess(List<Post> list) {

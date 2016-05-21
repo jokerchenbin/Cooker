@@ -3,17 +3,11 @@ package com.mastercooker.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Paint;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.mastercooker.R;
 import com.mastercooker.tools.FunctionUtils;
@@ -23,10 +17,8 @@ import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.listener.SaveListener;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
-    private Intent intent;
     private EditText et_username,et_password;
     private Button bt_login,bt_register;
-    private TextView forgetPassword;
     private String tel,password;
     private Activity activity;
     private Context context;
@@ -36,9 +28,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
         activity=this;
         context=this;
-        forgetPassword = (TextView) findViewById(R.id.forget_password);
-        forgetPassword.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
-        forgetPassword.setOnClickListener(this);
         et_username=(EditText)findViewById(R.id.login_username);
         et_password=(EditText)findViewById(R.id.login_password);
         bt_login=(Button)findViewById(R.id.login_btn);
@@ -57,11 +46,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 //注册按钮
                 Intent registerIntent=new Intent(activity,RegisterActivity.class);
                 startActivity(registerIntent);
-                break;
-                //忘记密码
-            case R.id.forget_password:
-                Intent forgetpswIntent= new Intent(activity,RegisterActivity.class);
-                startActivity(forgetpswIntent);
                 break;
         }
     }

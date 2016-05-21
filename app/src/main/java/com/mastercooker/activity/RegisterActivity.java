@@ -36,7 +36,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private String errMessage;
     private static final int RESULT_ERROR = 0;
     private static final int RESULT_OK = 1;
-    /* 记录 电话号码、用户名、密码、验证码*/
     private MyUser myUser;
     private Button btn_register;
     private String telephone, username, password, nextpassword,messageNumber;
@@ -50,10 +49,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         initView();
     }
 
-    /**
-     * Created by 陈彬 on 2016/4/5  21:48
-     * 方法描述: 初始化组件
-     */
     private void initView() {
         et_phono = (EditText) findViewById(R.id.phone_number);
         et_code = (EditText) findViewById(R.id.message_number);
@@ -84,10 +79,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-    /**
-     * Created by 陈彬 on 2015/12/30  10:06
-     * 方法描述:  获取云端的验证码
-     */
     private void getVerification() {
         //检查手机号码是否合理
         if (!isMobile(telephone)) {
@@ -95,27 +86,18 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
         timeHandler.sendEmptyMessageDelayed(1, 100);
-        //调试期间  关闭功能
         BmobSMS.requestSMSCode(context, telephone, "注册短信验证", new RequestSMSCodeListener() {
             @Override
             public void done(Integer integer, BmobException e) {
                 Toast.makeText(context, "短信已发送，请注意查收.", Toast.LENGTH_SHORT).show();
-                if (e == null) {
-                    Log.v("chenbin", integer + "  收到的数据");
-                } else {
-                    Log.v("chenbin", e.toString());
-                }
             }
         });
     }
 
 
-    //短信验证计时器
+
     private int time = 60;
-    /**
-     * Created by 陈彬 on 2015/12/30  10:46
-     * 方法描述:  短信计时的 Handler
-     */
+
     private Handler timeHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -124,12 +106,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 tv_click.setFocusable(true);
                 tv_click.setFocusableInTouchMode(true);
                 tv_click.setClickable(true);
-                //tv_click.setBackgroundDrawable(getResources().getDrawable(R.drawable.edittext_bg));
-                //tv_checkNumber.setTextColor(getResources().getColor(R.color.text_defulat));
                 time = 60;
             }else {
-               // tv_click.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_bg));
-                //tv_click.setTextColor(getResources().getColor(R.color.white));
                 tv_click.setClickable(false);
                 tv_click.setText(time-- + "秒重发");
                 timeHandler.sendEmptyMessageDelayed(1, 1000);
@@ -175,16 +153,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             errMessage = "密码不能为空";
             return false;
         }
-        /* 短信验证 */
-        //checkMessageNumber(messageNumber);
         return true;
     }
 
 
-    /**
-     * Created by 陈彬 on 2015/12/25  14:29
-     * 方法描述: 注册
-     */
     private void registerUser() {
         messageNumber = et_code.getText().toString().trim();
         FunctionUtils.showLoadingDialog(activity);
@@ -204,10 +176,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         checkMessageNumber(messageNumber);
     }
 
-    /**
-     * Created by 陈彬 on 2015/12/30  10:55
-     * 方法描述: 校验短信验证码是否正确
-     */
     private void checkMessageNumber(String number) {
         BmobSMS.verifySmsCode(context, telephone, number, new VerifySMSCodeListener() {
             @Override
@@ -241,10 +209,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     };
 
 
-    /**
-     * Created by 陈彬 on 2015/12/30  11:06
-     * 方法描述: 注册用户到云端
-     */
     private void registerToBmob(){
         Toast.makeText(activity, "正在注册，请稍后...", Toast.LENGTH_SHORT).show();
         //使用Bmob自带的用户管理系统
@@ -263,7 +227,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
             @Override
             public void onFailure(int i, String s) {
-                Log.v("chenbin","失败 -- > "+s);
                 if (i == 202) {
                     Toast.makeText(context, "此电话号码已注册过", Toast.LENGTH_SHORT).show();
                 } else {

@@ -25,8 +25,6 @@ import android.widget.TextView;
 
 import com.mastercooker.R;
 import com.mastercooker.adapter.FragmentAdapter;
-import com.mastercooker.database.DBCookOperation;
-import com.mastercooker.database.DBManager;
 import com.mastercooker.fragment.FirstPageFrag;
 import com.mastercooker.fragment.FourthPageFrag;
 import com.mastercooker.fragment.SecondPageFragment;
@@ -62,10 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    /**
-     * Created by 陈彬 on 2016/3/24  14:51
-     * 方法描述: 初始化组件
-     */
+
     private void initView() {
         imageView=(ImageView)findViewById(R.id.activity_bar_image);
         textView=(TextView)findViewById(R.id.activity_main_tb_tv_title);
@@ -128,12 +123,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;*/
         }
     }
-    private void showAnim(){
-        Animation alpha= AnimationUtils.loadAnimation(context,R.anim.image_anim);
-        radioButton5.startAnimation(alpha);
-    }
 
-    public  void  setViewPageItem(int item){
-        viewPager.setCurrentItem(item);
-    }
 }

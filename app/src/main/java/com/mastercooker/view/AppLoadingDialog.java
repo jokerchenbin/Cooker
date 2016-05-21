@@ -10,16 +10,7 @@ import android.os.Bundle;
 import com.mastercooker.R;
 
 
-/** 
- * @author long_xia@loongjoy.com
- * @version 创建时间：2015年12月2日 上午10:52:15 
- * 
- */
 
-/**
- * @author long_xia@loongjoy.com
- *
- */
 public class AppLoadingDialog extends Dialog{
 
 	/**

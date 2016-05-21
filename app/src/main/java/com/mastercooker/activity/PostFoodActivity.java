@@ -137,10 +137,7 @@ public class PostFoodActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private BmobFile mFile;
-    /**
-     * Created by 陈彬 on 2016/1/4  15:40
-     * 方法描述: 上传头像 并且更新到云端服务器
-     */
+
     private void uploadFile(File file, final String name, final String description, final String food, final String keyword, final String way1, final String way2, final String way3, final String way4) {
         BTPFileResponse response = BmobProFile.getInstance(context).upload(file.getAbsolutePath(), new UploadListener() {
 
@@ -165,12 +162,7 @@ public class PostFoodActivity extends AppCompatActivity implements View.OnClickL
     private Uri photoUri = null;
 
 
-    /**
-     * Created by 陈彬 on 2015/12/30  17:56
-     * 方法描述:  图片点击的动画加载
-     */
     private void showPicAnim() {
-        //弹出头像选择
         if (!FileTools.hasSdcard()) {
             Toast.makeText(context, "没有找到SD卡，请检查SD卡是否存在", Toast.LENGTH_SHORT).show();
             return;
@@ -209,10 +201,6 @@ public class PostFoodActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    /**
-     * Created by 陈彬 on 2016/1/4  11:38
-     * 方法描述: 保存头像图片 Bitmap  到本地
-     */
     private void saveBitmaptoLocal(Bitmap bitmap) {
         long l2 = System.currentTimeMillis();
         String fileName = l2 + ".jpg";
@@ -259,19 +247,6 @@ public class PostFoodActivity extends AppCompatActivity implements View.OnClickL
 
     private String err;//错误信息
 
-    /**
-     * Created by 陈彬 on 2016/4/20  16:18
-     * 方法描述: 判断内容是否OK
-     *
-     * @param name
-     * @param description
-     * @param food
-     * @param keyword
-     * @param way1
-     * @param way2
-     * @param way3
-     * @param way4
-     */
     private boolean isContentOk(String name, String description, String food, String keyword, String way1, String way2, String way3, String way4) {
         if (tempImgPath.isEmpty()){
             err = "请上传菜谱图片";

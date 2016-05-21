@@ -44,6 +44,9 @@ public class ModifyPswActivity extends AppCompatActivity {
                 old = old_psw.getText().toString().trim();
                 new1 = new_psw.getText().toString().trim();
                 new2 = new_psw2.getText().toString().trim();
+                if(!new1.equals(new2)){
+                    ToastDiy.showShort(context,"两次密码不一样！");
+                }else{
                 BmobUser.updateCurrentUserPassword(context, old, new1, new UpdateListener() {
                     @Override
                     public void onSuccess() {
@@ -58,6 +61,7 @@ public class ModifyPswActivity extends AppCompatActivity {
                         FunctionUtils.dissmisLoadingDialog();
                     }
                 });
+                }
             }
         });
     }

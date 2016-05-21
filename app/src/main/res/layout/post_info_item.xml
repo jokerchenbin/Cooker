@@ -70,7 +70,7 @@
                 android:id="@+id/post_info_item_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/a2013"/>
+                android:src="@mipmap/cuxiao"/>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout

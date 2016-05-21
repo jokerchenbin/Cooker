@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mastercooker.R;
-import com.mastercooker.database.DBCookOperation;
 import com.mastercooker.model.Cook;
 import com.mastercooker.model.MyUser;
 import com.mastercooker.model.Util;
@@ -55,10 +54,6 @@ public class MessageActivity extends AppCompatActivity {
         getData();
     }
 
-    /**
-     * Created by 陈彬 on 2016/3/29  17:18
-     * 方法描述: 初始化视图
-     */
     private void initView() {
         mImageView = (ImageView) findViewById(R.id.activity_message_iv);
         mTextViewDescribe = (TextView) findViewById(R.id.activity_message_tv_describe);
@@ -69,10 +64,6 @@ public class MessageActivity extends AppCompatActivity {
         mImageViewCollect = (ImageView) findViewById(R.id.activity_message_tb_iv);
     }
 
-    /**
-     * Created by 陈彬 on 2016/3/29  17:18
-     * 方法描述: 初始化数据
-     */
     private void initData() {
         Intent intent = getIntent();
         mCook = (Cook) intent.getSerializableExtra("Cook");
@@ -131,7 +122,7 @@ public class MessageActivity extends AppCompatActivity {
         user.update(context, new UpdateListener() {
             @Override
             public void onSuccess() {
-                isCollect = true;
+                isCollect = false;
                 mImageViewCollect.setImageResource(R.mipmap.is_collect_not);
                 Toast.makeText(context, "取消收藏!", Toast.LENGTH_SHORT).show();
                 FunctionUtils.dissmisLoadingDialog();

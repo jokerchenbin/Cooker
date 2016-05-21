@@ -15,11 +15,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
-/**
- * 类描述：
- * 创建人：陈彬
- * 创建时间：2016/3/18 16:07
- */
+
 public class CookInfoAdapter extends BaseAdapter {
     private Context context;
     private List<Cook> list;

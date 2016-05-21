@@ -64,10 +64,7 @@ public class FirstPageFrag extends Fragment implements BaseSliderView.OnSliderCl
         return view;
     }
 
-    /**
-     * Created by 陈彬 on 2016/3/29  14:15
-     * 方法描述: 获取数据
-     */
+
     private void getData() {
         FunctionUtils.showLoadingDialog(getActivity());
         BmobQuery<Cook> query = new BmobQuery<>();

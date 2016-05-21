@@ -55,10 +55,7 @@ public class RadialButtonLayout extends FrameLayout {
         initView();
     }
 
-    /**
-     * Created by 陈彬 on 2016/4/18  15:23
-     * 方法描述: 初始化组件
-     */
+
     private void initView() {
         tv_01 = (TextView) view.findViewById(R.id.btn_blue);
         tv_02 = (TextView) view.findViewById(R.id.btn_indigo);
